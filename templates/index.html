@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            background-image: url("./img/bg.jpg");
+	        opacity:0.5;
+        }
+    </style>
+    <title>Breast Cancer Classification</title>
+    <link rel="stylesheet" href="{{  url_for('static', filename='css/style.css')  }}">
+</head>
+<body>
+    <h2 style="color: white;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Breast Cancer Malignant/Benign Classification</h2>
+    <form action="{{  url_for('classify')  }}" method='POST'>
+
+    <div class="row" >
+
+        <div class="column" >
+        <input class="tb"  type="number" step="any"  name="meanradius" placeholder="mean radius">
+        
+        <input class="tb"  type="number" step="any"  name="meantexture" placeholder="mean texture">
+        
+        <input class="tb"  type="number" step="any"  name="meanperimeter" placeholder="mean perimeter">
+
+        <input class="tb"  type="number" step="any"  name='meanarea' placeholder="mean area">
+        
+        <input class="tb"  type="number" step="any"  name="meansmoothness" placeholder="mean smoothness">
+        
+        <input class="tb"  type="number" step="any"  name="meancompactness" placeholder="mean compactness">
+        
+
+
+        <input class="tb"  type="number" step="any"  name="meanconcavity" placeholder="mean concavity">
+        
+        <input class="tb"  type="number" step="any"  name="meanconcave points" placeholder="mean concave points">
+        
+        <input class="tb"  type="number" step="any"  name="meansymmetry" placeholder="mean symmetry">
+
+            <input class="tb"  type="number" step="any"  name="meanfractal dimension" placeholder="mean fractal dimension">        
+
+            <input class="tb"  type="number" step="any"  name="radiuserror" placeholder="radius error">
+            
+            <input class="tb"  type="number" step="any"  name="texture error" placeholder="texture error">
+
+
+            <input class="tb"  type="number" step="any"  name="perimetererror" placeholder="perimeter error">
+            
+            <input class="tb"  type="number" step="any"  name="areaerror" placeholder="area error">
+            
+            <input class="tb"  type="number" step="any"  name="smoothnesserror" placeholder="smoothness error">
+</div>
+<div class="column" >
+            <input class="tb"  type="number" step="any"  name="compactnesserror" placeholder="compactness error">
+            
+            <input class="tb"  type="number" step="any"  name="concavityerror" placeholder="concavity error">
+            
+            <input class="tb"  type="number" step="any"  name="concavepointserror" placeholder="concave points error">
+
+
+            <input class="tb"  type="number" step="any"  name="symmetryerror" placeholder="symmetry error">
+            
+            <input class="tb"  type="number" step="any"  name="fractaldimensionerror" placeholder="fractal dimension error">
+            
+            <input class="tb"  type="number" step="any"  name="worstradius" placeholder="worst radius">
+
+            <input class="tb"  type="number" step="any"  name="worsttexture" placeholder="worst texture">
+            
+            <input class="tb"  type="number" step="any"  name="worstperimeter" placeholder="worst perimeter">
+            
+            <input class="tb"  type="number" step="any"  name="worstarea" placeholder="worst area">
+
+
+            <input class="tb"  type="number" step="any"  name="worstsmoothness" placeholder="worst smoothness">
+            
+            <input class="tb"  type="number" step="any"  name="worstcompactness" placeholder="worst compactness">
+            
+            <input class="tb"  type="number" step="any"  name="worstconcavity" placeholder="worst concavity">
+
+            <input class="tb"  type="number" step="any"  name="worstconcavepoints" placeholder="worst concave points">
+            
+            <input class="tb"  type="number" step="any"  name="worstsymmetry" placeholder="worst symmetry">
+            
+            <input class="tb"  type="number" step="any"  name="worstfractaldimension" placeholder="worst fractal dimension">
+            
+            </div> 
+        
+    </div>
+    <div style="position: absolute;left:30%;">
+        <button type="'submit" class="btn">Predict</button>
+    </div>
+
+    </form>
+    <br>
+<div style="font-size: large;font-weight: bold;">
+    {{ cl_out }}
+</div>
+</body>
+</html>
